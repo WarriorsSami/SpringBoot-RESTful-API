@@ -1,4 +1,4 @@
 package com.sami.jwtauthapi.models
 
-class Message {
+class Message(public val message: String) {
 }
