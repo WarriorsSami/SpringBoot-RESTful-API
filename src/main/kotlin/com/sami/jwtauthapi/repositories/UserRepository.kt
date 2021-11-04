@@ -1,4 +1,9 @@
 package com.sami.jwtauthapi.repositories
 
-interface UserRepository {
+import com.sami.jwtauthapi.entities.User
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface UserRepository: JpaRepository<User, Int> {
+    fun getUserByEmail(email: String): User?
+    fun getUserById(id: Int): User?
 }
