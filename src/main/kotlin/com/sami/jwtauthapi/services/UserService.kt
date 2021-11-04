@@ -19,4 +19,8 @@ class UserService(
     fun getUserById(id: Int): User? {
         return userRepository.getUserById(id)
     }
+
+    fun getAllUsers(): List<User> {
+        return userRepository.findAll()
+    }
 }

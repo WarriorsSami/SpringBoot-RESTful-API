@@ -70,7 +70,6 @@ class AuthController(
         }
     }
 
-    // logout user
     @PostMapping("logout")
     fun logout(response: HttpServletResponse): ResponseEntity<Any> {
         val cookie = Cookie("jwt", "")
@@ -79,5 +78,10 @@ class AuthController(
         response.addCookie(cookie)
 
         return ResponseEntity.ok(Message("success"))
+    }
+
+    @GetMapping("users")
+    fun getUsers(): ResponseEntity<Any> {
+        return ResponseEntity.ok(userService.getAllUsers())
     }
 }
